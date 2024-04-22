@@ -89,11 +89,20 @@
 	  }
 
 	  // TOPONIMO
-      $toponimo = isset($item['toponimo']) ? mysqli_real_escape_string($conn, $item['tipo']) : "NULL";
-	  $query = "SELECT * FROM TOPONIMO WHERE nome = 'tipo'";
+      $toponimo = isset($item['toponimo']) ? mysqli_real_escape_string($conn, $item['toponimo']) : "NULL";
+	  $query = "SELECT * FROM TOPONIMO WHERE tipo = '$toponimo'";
 	  $result = mysqli_query($conn, $query);
 	  if(mysqli_num_rows($result) === 0){
-		$query = "INSERT INTO 'provincia' ('id', 'tipo' VALUES (NULL, '$toponimo'); ";
+		$query = "INSERT INTO `toponimo` (`id`, `tipo`) VALUES (NULL, '$toponimo'); ";
+		$result = mysqli_query($conn, $query);
+	  }
+
+	  // TOPONIMO
+      $toponimo = isset($item['toponimo']) ? mysqli_real_escape_string($conn, $item['toponimo']) : "NULL";
+	  $query = "SELECT * FROM TOPONIMO WHERE tipo = '$toponimo'";
+	  $result = mysqli_query($conn, $query);
+	  if(mysqli_num_rows($result) === 0){
+		$query = "INSERT INTO `toponimo` (`id`, `tipo`) VALUES (NULL, '$toponimo'); ";
 		$result = mysqli_query($conn, $query);
 	  }
     }
