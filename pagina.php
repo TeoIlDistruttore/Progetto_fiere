@@ -78,7 +78,7 @@
 			<img src="icona_lombardia.png" style="width:235px; height:75px;">
 		</a>
 		<a href="calendario.php">Calendario eventi</a>
-
+		
 	</header>
 
 	<video autoplay muted loop id="skyline_milano">
