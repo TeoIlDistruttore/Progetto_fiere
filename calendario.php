@@ -81,10 +81,10 @@
 
       // PROVINCIA
       $provincia = isset($item['prov']) ? mysqli_real_escape_string($conn, $item['prov']) : "NULL";
-	  $query = "SELECT * FROM PROVINCIA WHERE nome = 'provincia'";
+	  $query = "SELECT * FROM PROVINCIA WHERE provincia = '$provincia'";
 	  $result = mysqli_query($conn, $query);
 	  if(mysqli_num_rows($result) === 0){
-		$query = "INSERT INTO 'provincia' ('id', 'provincia' VALUES (NULL, '$provincia'); ";
+		$query = "INSERT INTO `provincia` (`id`, `provincia`) VALUES (NULL, '$provincia'); ";
 		$result = mysqli_query($conn, $query);
 	  }
 
